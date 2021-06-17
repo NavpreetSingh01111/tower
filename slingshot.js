@@ -8,12 +8,12 @@ class SlingShot {
       };
   
       this.pointB = pointB;
-      this.slingShot = Constraint.create(options);
+      this.singShot = Constraint.create(options);
       World.add(world, this.slingShot);
     }
     
     display() {
-      if (this.SlingShot.bodyA) {
+      if (this.slingShot.bodyA) {
         var pointA = this.slingShot.bodyA.position;
         var pointB = this.pointB;
         push();

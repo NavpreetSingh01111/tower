@@ -4,10 +4,10 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
-var holder,ball,ground;
+var holder,ground;
 var stand1,stand2;
-var ball;
-var slingShot;
+
+var chain1;
 var  polygon_img,polygon1;
 function preload(){
   polygon_img=loadImage("polygon.png");
@@ -43,9 +43,9 @@ function setup() {
   //top
   block16 = new Block(390,155,30,40);
 
-  polygon1 = new polygon (50,200,20,20)
+  polygon1 = new Polygon (50,200,20,20)
 
-slingShot = new SlingShot (this.polygon,{x:100,y:200});
+chain1 = new SlingShot (polygon1.body,{x:100,y:200});
 
 }
 function draw() {
@@ -80,10 +80,8 @@ function draw() {
   block15.display();
   fill("grey");
   block16.display();
- slingShot.display();
+ slingShot1.display();
 polygon1.display();
 }
-function mouseDragged() {
-  Matter.Body.setPosition(polygon1.body,{x:mouseX,y:mouseY})
-}
+
 

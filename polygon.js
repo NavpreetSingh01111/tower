@@ -1,24 +1,21 @@
-class polygon {
-    constructor(x, y,radius,) {
+class Polygon {
+    constructor(x, y,width,height,angle) {
       var options = { 
         density: 1, 
         };
   
-      this.polygon = Bodies.circle(x, y, radius, options);
-      this.radius= radius;
-      this.radius = radius;
-      World.add(world, this.polygon);
+      this.body = Bodies.rectangle(x, y, width,height, options);
+      this.width= width;
+      this.height = height;
+      World.add(world, this.body);
     }
   
     display() {
-    var polygon
+      var angle = this.body.angle;
       push();
-      translate(this.polygon.position.x, this.polygon.position.y);
-      
-      imageMode (CENTER)
-      image(polygon_img,polygon.position.x,polygon.position.y,40,40)
-      
-      
+      translate(this.body.position.x, this.body.position.y);
+      rotate(angle);
+      ellipse(0, 0, this.width, this.height);
       pop();
     }
   }
